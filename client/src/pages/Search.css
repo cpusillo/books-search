@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, .brand{
     font-family: 'Open Sans', sans-serif;
+}
+
+.header-img {
+    height: 200px;
+    background-image: url('https://images.pexels.com/photos/1319854/pexels-photo-1319854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-attachment: fixed;
+}
+
+.red {
+    color: #ea4335;
+}
+.blue {
+    color: #4285F4;
+}
+.green {
+    color: #34A853;
+}
+.yellow {
+    color: #FBBC05;
 }
