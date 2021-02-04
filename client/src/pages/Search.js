@@ -3,9 +3,17 @@ import { Container, Card, Button, InputGroup, FormControl } from 'react-bootstra
 import { FaSearch } from 'react-icons/fa'
 import { FaBook } from 'react-icons/fa'
 import "./Search.css"
-//import API from "../utils/API"
+import API from "../utils/API"
 
 export default function Search() {
+
+    const [title, setTitle] = useState('')
+    const [book,setBook] = useState('')
+
+    function getBook(){
+        API.getBook(title).then(res => console.log(res.data))
+        .catch(err => console.log(err));
+    }
 
     return (
         <>
@@ -16,11 +24,11 @@ export default function Search() {
                 </Card.Header>
                 <Card.Body>
                 <InputGroup className="mb-3">
-                <FormControl
+                <FormControl onChange={event => setTitle(event.target.value.replace(/ /g,"%20").toLowerCase())}
                 placeholder="The Joy Luck Club"
                 />
                 <InputGroup.Append>
-                <Button variant="success"><FaSearch /></Button>
+                <Button variant="success" onClick={() => getBook(title)}><FaSearch /></Button>
                 </InputGroup.Append>
                 </InputGroup>
                 </Card.Body>
