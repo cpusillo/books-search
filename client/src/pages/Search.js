@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Card, Button, InputGroup, FormControl } from 'react-bootstrap'
 import { FaSearch } from 'react-icons/fa'
 import { List, ListItem } from "../components/List/List"
+import Results  from  "../components/Results/Results"
 import "./Search.css"
 import API from "../utils/API"
 
@@ -39,6 +40,10 @@ class Search extends React.Component {
         })}).catch(err => console.log(err)); // catch any errors and display to console.
     }
 
+    saveBook = () => {
+
+    }
+
     render(){
     return (
         <>
@@ -62,35 +67,18 @@ class Search extends React.Component {
                                 </InputGroup.Append>
                             </InputGroup>
                         </Card.Body>
-
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => {
-                  return (
-                    <ListItem key={book._id}>
-                        <h3 className="red">
-                        {book.volumeInfo.title}
-                        </h3>
-                        <p class="lead">
-                        {book.volumeInfo.authors && book.volumeInfo.authors.length > 1 ? book.volumeInfo.authors.join(" & ") : book.volumeInfo.authors}
-                        </p>
-                        <img className="img-fluid" src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail :
-                             "https://img.icons8.com/cute-clipart/64/000000/no-image.png"}/>
-                        <p class="font-italic">
-                        {book.volumeInfo.description}
-                        </p>
-                        <a href={book.volumeInfo.previewLink}>More information</a><br/>
-                        <a href="#">Save this book</a>
-
-                    </ListItem>
-                  );
-                })}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+                        </Card>
+                    {this.state.books.length ? (
+                    <Results
+                        books={this.state.books}/>
+                    ) : (
+                    <div>
+                        <hr/>
+                    <p className="lead font-italic">No results to display</p>
+                    </div>
+                )}
                 
-                </Card>
+
             </Container>
         </>
     )

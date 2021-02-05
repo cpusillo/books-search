@@ -6,7 +6,7 @@ export default function Navigation() {
     return (
         <div>
             <Navbar bg="light" expand="lg">
-            <Navbar.Brand className="mx-auto brand" href="#home">
+            <Navbar.Brand className="brand" href="#home">
             <FaBook className="blue" /> 
             <span className="red"> Google </span> 
             <span className="yellow">Book </span>
