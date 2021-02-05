@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, Card, Button, InputGroup, FormControl } from 'react-bootstrap'
 import { FaSearch } from 'react-icons/fa'
-import { List, ListItem } from "../components/List/List"
 import Results  from  "../components/Results/Results"
 import "./Search.css"
 import API from "../utils/API"
@@ -40,8 +39,16 @@ class Search extends React.Component {
         })}).catch(err => console.log(err)); // catch any errors and display to console.
     }
 
-    saveBook = () => {
-
+    saveBook = bookData => {
+        API.saveBook({
+            _id: bookData.id,
+            title: bookData.title,
+            authors: bookData.authors,
+            description: bookData.description,
+            image: bookData.image,
+            link: bookData.link
+        }).then(console.log("Posted"))
+        .catch(err => console.log(err))
     }
 
     render(){
@@ -71,7 +78,9 @@ class Search extends React.Component {
                         </Card>
                     {this.state.books.length ? (
                     <Results
-                        books={this.state.books}/>
+                        books={this.state.books}
+                        save={this.saveBook}
+                        />
                     ) : (
                     <div>
                         <hr/>

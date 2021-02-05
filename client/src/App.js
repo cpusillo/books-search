@@ -8,8 +8,9 @@ import { BrowserRouter as Router, Route} from "react-router-dom"
 function App() {
   return (
     <Router>
-      <Navigation />
       <div>
+      <Navigation />
+      
       <Route exact path="/" component={Search} />
       <Route path="/Saved" component={Saved} />
       </div>
