@@ -52,6 +52,7 @@ class Search extends React.Component {
                     <Card.Header className="header-img">
                     </Card.Header>
                         <Card.Body>
+                        <h3 className="text-center">Search for Books</h3>
                             <InputGroup className="mb-3">
                                 <FormControl 
                                     value={this.state.search}
@@ -78,7 +79,6 @@ class Search extends React.Component {
                     </div>
                 )}
                 
-
             </Container>
         </>
     )
