@@ -23,7 +23,7 @@ class Search extends React.Component {
 
     // Call our getBook() method when the search button is clicked/submitted.
     handleFormSubmit = event => {
-        event.preventDefault(); // prevent the form from wiping out the value on submit
+        event.preventDefault(); // prevent the form from wiping out the value on
         this.getBook();
     }
 
@@ -68,13 +68,20 @@ class Search extends React.Component {
                 {this.state.books.map(book => {
                   return (
                     <ListItem key={book._id}>
-                        <strong>
+                        <h3 className="red">
                         {book.volumeInfo.title}
-                        </strong>
-                        <img src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg"}/>
-                        <a href={book.volumeInfo.previewLink}>Click for more</a>
-                        {book.volumeInfo.authors}
+                        </h3>
+                        <p class="lead">
+                        {book.volumeInfo.authors && book.volumeInfo.authors.length > 1 ? book.volumeInfo.authors.join(" & ") : book.volumeInfo.authors}
+                        </p>
+                        <img className="img-fluid" src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail :
+                             "https://img.icons8.com/cute-clipart/64/000000/no-image.png"}/>
+                        <p class="font-italic">
                         {book.volumeInfo.description}
+                        </p>
+                        <a href={book.volumeInfo.previewLink}>More information</a><br/>
+                        <a href="#">Save this book</a>
+
                     </ListItem>
                   );
                 })}
