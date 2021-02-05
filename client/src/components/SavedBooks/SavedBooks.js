@@ -19,9 +19,9 @@ function SavedBooks(props){
                                         "https://img.icons8.com/cute-clipart/64/000000/no-image.png"}/>
                                         <br/>
                                 <a href={book.link} target="_blank" rel="noreferrer" >
-                                <Button variant="danger" className="px-2"><FaReadme/></Button>
+                                <Button variant="danger" className="px-2 mt-2"><FaReadme/></Button>
                                     </a>
-                                <Button variant="danger" className="px-2 ml-1"><FaTrashAlt/></Button>
+                                <Button variant="danger" className="px-2 ml-1 mt-2"><FaTrashAlt/></Button>
                             </Col>
                             <Col>
                                 <p className="lead">

@@ -21,15 +21,18 @@ function Results(props){
                             <Col>
                                 <img className="img-fluid" alt="Book thumbnail" src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail :
                                         "https://img.icons8.com/cute-clipart/64/000000/no-image.png"}/>
+                                        <br/>
+                                    <a href={book.volumeInfo.previewLink} target="_blank" rel="noreferrer" >
+                                    <Button variant="danger" className="px-2 mt-2"><FaReadme/></Button>
+                                    </a>
+                                    <Button variant="danger" className="px-2 ml-1 mt-2" onClick={props.save}><FaSave/></Button>       
                             </Col>
                             <Col>
                                 <p className="lead">
                                 {book.volumeInfo.description}
                                 </p>
-                                <a href={book.volumeInfo.previewLink} target="_blank" rel="noreferrer" >
-                                <Button variant="danger" className="px-2"><FaReadme/></Button>
-                                    </a>
-                                <Button variant="danger" className="px-2 ml-1" onClick={props.save}><FaSave/></Button>
+                                
+
                             </Col>
                         </Row>           
                     </Card.Body>
