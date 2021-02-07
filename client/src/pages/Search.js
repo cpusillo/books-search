@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Card, Button, InputGroup, FormControl } from 'react-bootstrap'
 import { FaSearch } from 'react-icons/fa'
 import Results  from  "../components/Results/Results"
-import "./Search.css"
+import "./Styles.css"
 import API from "../utils/API"
 
 class Search extends React.Component {
@@ -22,14 +22,14 @@ class Search extends React.Component {
     };
 
     // Call our getBook() method when the search button is clicked/submitted.
-    handleFormSubmit = event => {
-        event.preventDefault(); // prevent the form from wiping out the value on
+    handleFormSubmit = () => {
         this.getBook();
     }
 
+    // Pass our searchTerm into our API getBook() method to populate our results.
     getBook = () => {
+        // scrub our title to make it work with the API link.
         const title = this.state.searchTerm.replace(/ /g,"%20").toLowerCase()
-        console.log(title); // make sure the title looks right
         // pass the scrubbed title value into our API method getBook as a param.
         API.getBook(title)
         // then we will set our state so we can use the books data in the List component.
@@ -40,15 +40,15 @@ class Search extends React.Component {
     }
 
     saveBook = bookData => {
+        // call API method save book and pass in our "bookData" values using our db structure
         API.saveBook({
-            _id: bookData.id,
+            id: bookData.id,
             title: bookData.title,
             authors: bookData.authors,
             description: bookData.description,
             image: bookData.image,
             link: bookData.link
-        }).then(console.log("Posted"))
-        .catch(err => console.log(err))
+        }).catch(err => console.log(err)) // catch any errors and display to console.
     }
 
     render(){
@@ -56,10 +56,11 @@ class Search extends React.Component {
         <>
             <Container>
                 <Card>
-                    <Card.Header className="header-img">
+                    <Card.Header>
+                    <h3 className="text-center">Search for Books</h3>
                     </Card.Header>
                         <Card.Body>
-                        <h3 className="text-center">Search for Books</h3>
+                        
                             <InputGroup className="mb-3">
                                 <FormControl 
                                     value={this.state.search}
@@ -79,12 +80,12 @@ class Search extends React.Component {
                     {this.state.books.length ? (
                     <Results
                         books={this.state.books}
-                        save={this.saveBook}
+                        saveBook={this.saveBook}
                         />
                     ) : (
                     <div>
                         <hr/>
-                    <p className="lead font-italic">No results to display</p>
+                    <p>No results yet, try searching for a book!</p>
                     </div>
                 )}
                 

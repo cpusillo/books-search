@@ -10,7 +10,7 @@ export default {
         saveBook: function(bookData){
                 return axios.post("/api/books", bookData);
         },
-        getSavedBooks(){
+        getSavedBooks: function () {
                 return axios.get("/api/books");
         },
         deleteBook(id){

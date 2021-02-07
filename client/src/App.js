@@ -10,7 +10,6 @@ function App() {
     <Router>
       <div>
       <Navigation />
-      
       <Route exact path="/" component={Search} />
       <Route path="/Saved" component={Saved} />
       </div>
