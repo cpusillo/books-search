@@ -9,7 +9,7 @@ Search for your favorite books using the Google Books API. Build a custom readin
 * React Bootstrap, React Icons
 * Google Books API
 
-Try out the app [here](https://stark-river-11475.herokuapp.com/)! 
+Try out the app [here](https://obscure-refuge-85533.herokuapp.com/)! 
 
 ## How to use this app
 * From the main page, type in a name of a book you're interested in and hit the search button. All books will appear on the bottom of the search bar.
