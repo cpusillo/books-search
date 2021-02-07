@@ -23,4 +23,4 @@ Try out the app [here](https://stark-river-11475.herokuapp.com/)!
 * Run `npm start` to start up a local version of the app, running on the port of 3000.
 
 ## Screenshots:
-[!ImageOfApp](https://media.giphy.com/media/zaaEifKLLJLR4FOE68/giphy.gif)
+![ImageOfApp](https://media.giphy.com/media/zaaEifKLLJLR4FOE68/giphy.gif)
