@@ -23,4 +23,4 @@ Try out the app [here](https://obscure-refuge-85533.herokuapp.com/)!
 * Run `npm start` to start up a local version of the app, running on the port of 3000.
 
 ## Screenshots:
-<img src="https://media.giphy.com/media/pXxy9mjfdnm1t1PQx2/giphy.gif" alt="drawing" width="1200"/>
+<img src="https://media.giphy.com/media/pXxy9mjfdnm1t1PQx2/giphy.gif" alt="drawing" width="1000"/>
