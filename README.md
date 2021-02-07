@@ -6,6 +6,7 @@ Search for your favorite books using the Google Books API. Build a custom readin
 * Node
 * Express
 * MongoDB/Mongoose
+* React Bootstrap, React Icons
 * Google Books API
 
 Try out the app [here](https://stark-river-11475.herokuapp.com/)! 
