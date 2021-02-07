@@ -24,3 +24,4 @@ Try out the app [here](https://obscure-refuge-85533.herokuapp.com/)!
 
 ## Screenshots:
 ![ImageOfApp](https://media.giphy.com/media/pXxy9mjfdnm1t1PQx2/giphy.gif)
+<img src="https://media.giphy.com/media/pXxy9mjfdnm1t1PQx2/giphy.gif" alt="drawing" width="200"/>
