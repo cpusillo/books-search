@@ -24,6 +24,6 @@ class ResultList extends Component {
     }
 }
 
-export default ResultsCard
+export default ResultList
 
 
