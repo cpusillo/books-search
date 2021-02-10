@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ResultListItem from "../ResultsCard/ResultsCard";
+import ResultsCard from "../ResultsCard/ResultsCard";
 
 class ResultList extends Component {
 
@@ -8,7 +8,7 @@ class ResultList extends Component {
         return (
             // map over our this.props.books object to d
             this.props.books.map((book) => (
-            <ResultListItem 
+            <ResultsCard 
                 key={book.id}
                 id={book.id}
                 title={book.volumeInfo.title}
@@ -24,6 +24,6 @@ class ResultList extends Component {
     }
 }
 
-export default ResultList
+export default ResultsCard
 
 
